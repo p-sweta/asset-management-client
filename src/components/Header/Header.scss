@@ -1,0 +1,28 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+
+.header {
+    background-color: $white;
+    @include page-padding;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__container {
+        background-image: url(../../assets/water.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: $darkblue;
+    }
+
+}

@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/fonts" as *;
+
+.assetlist {
+    @include page-padding;
+
+    &__asset {
+        padding: 0;
+    }
+
+    &__title {
+    color: $darkblue;
+    }
+
+    &__item {
+        list-style-type: none;
+    }
+}

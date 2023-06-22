@@ -1,5 +1,6 @@
 @use "./styles/partials/variables.scss" as *;
 @use "./styles/partials/mixins.scss" as *;
+@use "./styles/partials/fonts" as *;
 
 *,
 *::before,
@@ -9,7 +10,7 @@
 
 body {
   margin: 0;
-  font-family: avenir, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: montserrat, avenir, Verdana, Geneva, Tahoma, sans-serif;
   font-weight: 400;
   color: $black;
 }

@@ -13,7 +13,15 @@
     color: $darkblue;
     }
 
+    &__link {
+        text-decoration: none;
+    }
+
     &__item {
         list-style-type: none;
+    }
+
+    &__details--not-selected {
+        display: none;
     }
 }

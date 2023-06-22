@@ -7,7 +7,6 @@ import "./AssetsPage.scss";
 const AssetsPage = () => {
   const { id } = useParams();
   const [assetsData, setAssetsData] = useState([]);
-  const [currAsset, setCurrAsset] = useState();
   const api_url = "http://localhost:8080";
 
   useEffect(() => {
@@ -21,8 +20,32 @@ const AssetsPage = () => {
     };
     getAssets();
   }, []);
-
   console.log(assetsData);
+
+
+  const [currAsset, setCurrAsset] = useState([]);
+
+  useEffect(() => {
+    const getAssetByID = async () => {
+        try {
+            if (id) {
+                const response = await axios.get(`${api_url}/assets/${id}`);
+                setCurrAsset(response.data);
+            }
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    getAssetByID();
+  }, [id]);
+
+  if (!currAsset) {
+    return <p>Loading...</p>;
+  }
+
+//   console.log(assetsData);
+//   console.log(currAsset);
 
   return (
     <div>

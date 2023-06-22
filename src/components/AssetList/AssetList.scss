@@ -21,6 +21,10 @@
         list-style-type: none;
     }
 
+    &__details {
+        position: relative;
+    }
+    
     &__details--not-selected {
         display: none;
     }

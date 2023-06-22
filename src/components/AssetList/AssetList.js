@@ -1,10 +1,17 @@
 import { date } from "../../utils";
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
 import AssetDetails from "../AssetDetails/AssetDetails";
 import AssetCard from "../AssetCard/AssetCard";
 import "./AssetList.scss";
 
 const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
+    const [selectedAssetId, setSelectedAssetId] = useState(null);
+
+  const handleAssetClick = (assetId) => {
+    setSelectedAssetId(assetId);
+  };
+
   return (
     <article className="assetlist">
       <h2 className="assetlist__title">ASSETS</h2>
@@ -12,19 +19,21 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
         {assetsData.map((asset) => {
           return (
             <>
-              <NavLink
-                to={`/assets/${currAsset._id}`}
-                key={asset._id}
-                className="assetlist__link"
-              >
+              
                 <li
                   className={`assetlist__item ${
-                    asset._id === currAsset?._id
+                    asset._id === selectedAssetId
                       ? "assetlist__item--selected"
                       : ""
                   }`}
-                  onClick={() => setCurrAsset(asset)}
+                  onClick={() => handleAssetClick(asset._id)}
                 >
+                    <NavLink
+                to={`/assets/${asset._id}`}
+                key={asset._id}
+                className="assetlist__link"
+                activeClassName="active"
+              >
                   <AssetCard
                     name={asset.assetName}
                     type={asset.assetType}
@@ -32,21 +41,21 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
                     location={asset.locationName}
                     lastMaintenancedate={date(asset.lastMaintenanceDate)}
                   />
-                </li>
-              </NavLink>
-
-              {asset._id === currAsset?._id && (
+               
+              
+                </NavLink>
+              {asset._id === selectedAssetId && (
                 <div
                   className={`assetlist__details ${
-                    !currAsset._id ? "assetlist__details--not-selected" : ""
+                    !selectedAssetId ? "assetlist__details--not-selected" : ""
                   }`}
                 >
-                  <AssetDetails currAsset={currAsset} />
+                  <AssetDetails currAsset={asset} />
                 </div>
               )}
+               </li>
             </>
           );
-          //   return null;
         })}
       </ul>
     </article>

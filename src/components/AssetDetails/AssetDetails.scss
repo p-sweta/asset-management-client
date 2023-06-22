@@ -35,4 +35,25 @@
     margin: 0;
     color: $darkblue;
   }
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1rem;
+  }
+
+  &__button {
+    color: rgb(201, 201, 201);
+    font-size: 0.6rem;
+    font-weight: 600;
+    margin: 1rem 0 0 0;
+    padding: 0.2rem 0.5rem;
+    background-color: $darkblue;
+    width: 100%;
+    border-radius: 15%;
+  }
 }

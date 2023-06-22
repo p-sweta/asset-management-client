@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AssetsPage from "./pages/AssetsPage/AssetsPage";
+import UpdateAssetPage from "./pages/UpdateAssetPage/UpdateAssetPage";
 
 import './App.scss';
 
@@ -11,8 +12,10 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
+        <Route path="/" element={<LoginPage />} />
           <Route path="/assets" element={<AssetsPage />} />
           <Route path="/assets/:id" element={<AssetsPage />} />
+          <Route path="/assets/edit/:id" element={<UpdateAssetPage />} />
           {/* <Route path="/locations" element={} />
           <Route path="/locations/:id" element={} />
           <Route path="/technicians" element={} />

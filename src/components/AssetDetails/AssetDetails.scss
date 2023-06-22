@@ -1,3 +1,38 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/fonts" as *;
+
+.assetdetails {
+  padding-bottom: 5vw;
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-bottom: 2.5vw;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__field {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  &__label {
+    color: $gray;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  &__text {
+    font-size: 0.72rem;
+    margin: 0;
+    color: $darkblue;
+  }
+}

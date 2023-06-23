@@ -3,6 +3,8 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import AssetsPage from "./pages/AssetsPage/AssetsPage";
 import UpdateAssetPage from "./pages/UpdateAssetPage/UpdateAssetPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
 
 import './App.scss';
 
@@ -13,6 +15,7 @@ function App() {
         <Header />
         <Routes>
         <Route path="/" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/assets" element={<AssetsPage />} />
           <Route path="/assets/:id" element={<AssetsPage />} />
           <Route path="/assets/edit/:id" element={<UpdateAssetPage />} />

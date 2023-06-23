@@ -1,0 +1,21 @@
+@use "../../styles/partials/variables.scss" as *;
+@use "../../styles/partials/mixins.scss" as *;
+@use "../../styles/partials/fonts" as *;
+
+.input-field {
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    margin-bottom: 0.5rem;
+  }
+
+  &__input {
+    margin-bottom: 1rem;
+    color: $darkblue;
+    border: 1px solid lightgray;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    font-size: inherit;
+  }
+}

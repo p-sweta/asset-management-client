@@ -13,7 +13,12 @@ const AssetsPage = () => {
   useEffect(() => {
     const getAssets = async () => {
       try {
-        const response = await axios.get(`${api_url}/assets`);
+        const token = sessionStorage.getItem("token");
+        const response = await axios.get(`${api_url}/assets` , {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
         setAssetsData(response.data);
       } catch (err) {
         console.log(err);
@@ -23,7 +28,7 @@ const AssetsPage = () => {
   }, []);
   //   console.log(assetsData);
 
-  const [currAsset, setCurrAsset] = useState([]);
+  const [currAsset, setCurrAsset] = useState([]); 
 
   useEffect(() => {
     const getAssetByID = async () => {

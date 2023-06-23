@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import AssetList from "../../components/AssetList/AssetList";
 import AssetDetails from "../../components/AssetDetails/AssetDetails";
+import AddButton from "../../components/AddButton/AddButton";
 import "./AssetsPage.scss";
 
 const AssetsPage = () => {
@@ -14,7 +16,7 @@ const AssetsPage = () => {
     const getAssets = async () => {
       try {
         const token = sessionStorage.getItem("token");
-        const response = await axios.get(`${api_url}/assets` , {
+        const response = await axios.get(`${api_url}/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -28,7 +30,7 @@ const AssetsPage = () => {
   }, []);
   //   console.log(assetsData);
 
-  const [currAsset, setCurrAsset] = useState([]); 
+  const [currAsset, setCurrAsset] = useState([]);
 
   useEffect(() => {
     const getAssetByID = async () => {
@@ -59,6 +61,9 @@ const AssetsPage = () => {
         currAsset={currAsset}
         setCurrAsset={setCurrAsset}
       />
+      <Link to="/assets/add">
+        <AddButton />
+      </Link>
     </div>
   );
 };

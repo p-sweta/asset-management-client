@@ -1,7 +1,6 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import { date } from "../../utils";
 import "./UpdateAsset.scss";
 

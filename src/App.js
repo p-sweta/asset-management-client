@@ -5,6 +5,7 @@ import AssetsPage from "./pages/AssetsPage/AssetsPage";
 import UpdateAssetPage from "./pages/UpdateAssetPage/UpdateAssetPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
+import AddAssetPage from "./pages/AddAssetPage/AddAssetPage";
 
 import './App.scss';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/assets" element={<AssetsPage />} />
           <Route path="/assets/:id" element={<AssetsPage />} />
           <Route path="/assets/edit/:id" element={<UpdateAssetPage />} />
+          <Route path="/assets/add" element={<AddAssetPage />} />
           {/* <Route path="/locations" element={} />
           <Route path="/locations/:id" element={} />
           <Route path="/technicians" element={} />

@@ -10,7 +10,7 @@ const UpdateAsset = () => {
   const api_url = "http://localhost:8080";
 
   const [assetsData, setAssetsData] = useState([]);
-  const [currAsset, setCurrAsset] = useState([]);
+  const [currAsset, setCurrAsset] = useState({});
   const [assetName, setAssetName] = useState("");
   const [assetType, setAssetType] = useState("");
   const [assetId, setAssetId] = useState("");
@@ -54,19 +54,19 @@ const UpdateAsset = () => {
 
   useEffect(() => {
     if (currAsset) {
-      setAssetName(currAsset.assetName);
-      setAssetType(currAsset.assetType);
-      setAssetId(currAsset.assetId);
-      setLocationName(currAsset.locationName);
-      setAssetDescription(currAsset.assetDescription);
-      setPurchaseDate(currAsset.purchaseDate);
-      setManufacturer(currAsset.manufacturer);
-      setSerialNumber(currAsset.serialNumber);
-      setWarrantyExpirationDate(currAsset.warrantyExpirationDate);
-      setMaintenanceInterval(currAsset.maintenanceInterval);
-      setLastMaintenanceDate(currAsset.lastMaintenanceDate);
-      setNextMaintenanceDate(currAsset.nextMaintenanceDate);
-      setStatus(currAsset.status);
+        setAssetName(currAsset.assetName || ""); 
+        setAssetType(currAsset.assetType || "");
+        setAssetId(currAsset.assetId || "");
+        setLocationName(currAsset.locationName || "");
+        setAssetDescription(currAsset.assetDescription || "");
+        setPurchaseDate(currAsset.purchaseDate || "");
+        setManufacturer(currAsset.manufacturer || "");
+        setSerialNumber(currAsset.serialNumber || "");
+        setWarrantyExpirationDate(currAsset.warrantyExpirationDate || "");
+        setMaintenanceInterval(currAsset.maintenanceInterval || "");
+        setLastMaintenanceDate(currAsset.lastMaintenanceDate || "");
+        setNextMaintenanceDate(currAsset.nextMaintenanceDate || "");
+        setStatus(currAsset.status || "");
     }
   }, [currAsset]);
 

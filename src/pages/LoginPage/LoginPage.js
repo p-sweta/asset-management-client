@@ -41,7 +41,7 @@ const LoginPage = () => {
                     Log In
                 </button>
 
-                {err && <div className="login__alert">{`Invalid Email or Password! ${err}`}</div>}
+                {err && <div className="login__alert">{`Invalid Email or Password! Please try again!`}</div>}
             </form>
             <p className="login__text">
                 Don't have an account? <Link to="/signup" className="login__link">Sign up now →</Link>

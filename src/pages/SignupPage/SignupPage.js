@@ -38,21 +38,21 @@ const SignupPage = () => {
   return (
     <div className="register">
       <form className="register__form" onSubmit={handleSubmit}>
-        <h2 className="register__title">Log in</h2>
-        <InputField type="text" name="firstName" label="First name" />
-        <InputField type="text" name="lastName" label="Last name" />
-        <InputField type="text" name="phone" label="Phone" />
-        <InputField type="text" name="address" label="Address" />
-        <InputField type="text" name="email" label="Email" />
-        <InputField type="password" name="password" label="Password" />
+        <h2 className="register__title">Sign Up</h2>
+        <InputField type="text" name="firstName" label="First name" placeholder="First Name" />
+        <InputField type="text" name="lastName" label="Last name" placeholder="Last Name" />
+        <InputField type="text" name="phone" label="Phone" placeholder="Phone Number" />
+        <InputField type="text" name="address" label="Address" placeholder="Address" />
+        <InputField type="text" name="email" label="Email" placeholder="Email" />
+        <InputField type="password" name="password" label="Password" placeholder="Password" />
 
         <button className="register__button">Sign up</button>
 
         {success && <div className="register__alert">Registration Successful!</div>}
         {err && <div className="register__alert">Regitration Failed! Please Try Again!</div>}
       </form>
-      <p>
-        Have an account? <Link to="/">Log in</Link>
+      <p  className="register__text">
+        Have an account? <Link  className="register__link" to="/">Log In →</Link>
       </p>
     </div>
   );

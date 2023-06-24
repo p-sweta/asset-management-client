@@ -10,6 +10,10 @@
     margin-bottom: 2vw;
     text-align: left;
     font-size: 0.8rem;
+
+    @include tablet {
+        font-size: 0.9rem;
+    }
   }
 
   &__input {
@@ -20,8 +24,16 @@
     padding: 0.5rem 1rem;
     font-size: 0.8rem;
 
+    @include tablet {
+        font-size: 0.9rem;
+    }
+
     &::placeholder {
       font-size: 0.8rem;
+
+      @include tablet {
+        font-size: 0.9rem;
+      }
     }
   }
 }

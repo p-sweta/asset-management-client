@@ -6,7 +6,6 @@
 
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
-      padding: 0 5vw;
       @content;
     }
   }

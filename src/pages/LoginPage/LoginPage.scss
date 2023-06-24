@@ -10,6 +10,10 @@
   justify-content: center;
   align-items: center;
 
+  @include tablet {
+        margin: 20vw 15vw;
+  }
+
   &__form {
     display: flex;
     width: 100%;
@@ -52,20 +56,29 @@
   }
 
   &__alert {
-    border-left: 5px solid #ddd;
     padding: 0.75rem;
     margin-top: 2rem;
+    color: red;
+    font-size: 0.8rem;
   }
 
   &__text {
     font-size: 0.65rem;
     font-weight: 600;
+
+    @include tablet {
+        font-size: 0.7rem;
+    }
   }
 
   &__link {
     font-weight: 400;
     text-decoration: none;
-    color: rgb(38, 124, 164);
+    color: $white;
     cursor: pointer;
+
+    @include tablet {
+        color: rgb(22, 112, 151);
+    }
   }
 }

@@ -20,7 +20,11 @@ const AddAsset = () => {
   const [maintenanceInterval, setMaintenanceInterval] = useState("");
   const [lastMaintenanceDate, setLastMaintenanceDate] = useState("");
   const [nextMaintenanceDate, setNextMaintenanceDate] = useState("");
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState(false);
+
+  const handleStatusValue = () => {
+    setStatus(!status);
+  }
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -40,7 +44,7 @@ const AddAsset = () => {
           maintenanceInterval: maintenanceInterval,
           lastMaintenanceDate: lastMaintenanceDate,
           nextMaintenanceDate: nextMaintenanceDate,
-          status: status,
+          status: status ? "Active" : "Inactive"
         });
         alert("Asset created!!");
         navigate("/assets");
@@ -133,9 +137,9 @@ const AddAsset = () => {
                 id="status"
                 name="status"
                 checked={status === "Active"}
-                onChange={(e) => {
-                  setStatus(e.target.checked ? "Active" : "Inactive");
-                }}
+                onChange={
+                  handleStatusValue
+                }
               />
               Active
             </label>

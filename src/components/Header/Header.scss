@@ -9,8 +9,8 @@
     justify-content: space-between;
     align-items: center;
 
-    @include tablet {
-        
+    @include desktop {
+        padding: 1vw 5vw;
     }
 
     &__link {
@@ -31,6 +31,10 @@
 
         @include tablet {
         font-size: 1.7rem;
+        }
+
+        @include desktop {
+            font-size: 2rem;
         }
     }
 

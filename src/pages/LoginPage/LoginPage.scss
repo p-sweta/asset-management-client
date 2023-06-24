@@ -11,7 +11,11 @@
   align-items: center;
 
   @include tablet {
-        margin: 20vw 15vw;
+    margin: 20vw 15vw;
+  }
+
+  @include desktop {
+    margin: 15vw 25vw 25vw 25vw;
   }
 
   &__form {
@@ -48,6 +52,10 @@
     cursor: pointer;
     transition: background-color 0.15s;
 
+    @include tablet {
+      margin-bottom: 1rem;
+    }
+
     &:hover {
       background-color: green;
       color: $white;
@@ -67,7 +75,7 @@
     font-weight: 600;
 
     @include tablet {
-        font-size: 0.7rem;
+      font-size: 0.7rem;
     }
   }
 
@@ -78,7 +86,7 @@
     cursor: pointer;
 
     @include tablet {
-        color: rgb(22, 112, 151);
+      color: rgb(22, 112, 151);
     }
   }
 }

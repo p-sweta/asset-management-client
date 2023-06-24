@@ -28,6 +28,10 @@
         font-size: 1.5rem;
         padding-top: 2vw;
     }
+
+    @include desktop {
+      font-size: 1.8rem;
+    }
   }
 
   &__text {
@@ -44,7 +48,8 @@
       font-size: 0.7rem;
     }
     @include desktop {
-      padding: 7.2vw 0 4vw 0;
+      padding: 7.2vw 4vw 4vw 0;
+      font-size: 0.8rem;
     }
   }
 }

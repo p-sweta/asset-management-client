@@ -7,15 +7,21 @@
   flex-direction: column;
 
   &__label {
-    margin-bottom: 0.5rem;
+    margin-bottom: 2vw;
+    text-align: left;
+    font-size: 0.8rem;
   }
 
   &__input {
-    margin-bottom: 1rem;
+    margin-bottom: 5vw;
     color: $darkblue;
-    border: 1px solid lightgray;
-    border-radius: 1rem;
+    border: 1px solid $lightgray;
+    border-radius: 0.625rem;
     padding: 0.5rem 1rem;
-    font-size: inherit;
+    font-size: 0.8rem;
+
+    &::placeholder {
+      font-size: 0.8rem;
+    }
   }
 }

@@ -30,21 +30,21 @@ const LoginPage = () => {
     console.log(err);
 
     return (
-        <div className='login'>
+        <div className="login">
             <form className="login__form" onSubmit={handleSubmit}>
-                <h2 className="login__title">Log in</h2>
+                <h2 className="login__title">Log In</h2>
 
-                <InputField type="text" name="email" label="Email" />
-                <InputField type="password" name="password" label="Password" />
+                <InputField type="text" name="email" label="Email" placeholder="Email " />
+                <InputField type="password" name="password" label="Password" placeholder="Password"/>
 
                 <button className="login__button">
-                    Log in
+                    Log In
                 </button>
 
                 {err && <div className="login__alert">{`Invalid Email or Password! ${err}`}</div>}
             </form>
-            <p>
-                Need an account? <Link to="/signup">Sign up</Link>
+            <p className="login__text">
+                Don't have an account? <Link to="/signup" className="login__link">Sign up now →</Link>
             </p>
         </div>
     );

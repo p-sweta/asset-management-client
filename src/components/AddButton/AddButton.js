@@ -3,7 +3,7 @@ import "./AddButton.scss";
 const AddButton = () => {
     return (
         <div>
-            <button className="button">Add Item</button>
+            <button className="button">Add New Asset</button>
         </div>
     );
 };

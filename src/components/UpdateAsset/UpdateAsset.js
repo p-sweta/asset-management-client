@@ -45,7 +45,7 @@ const UpdateAsset = () => {
           setCurrAsset(response.data);
         }
       } catch (err) {
-        console.log(err); 
+        console.log(err);
       }
     };
 
@@ -54,19 +54,19 @@ const UpdateAsset = () => {
 
   useEffect(() => {
     if (currAsset) {
-        setAssetName(currAsset.assetName || ""); 
-        setAssetType(currAsset.assetType || "");
-        setAssetId(currAsset.assetId || "");
-        setLocationName(currAsset.locationName || "");
-        setAssetDescription(currAsset.assetDescription || "");
-        setPurchaseDate(currAsset.purchaseDate || "");
-        setManufacturer(currAsset.manufacturer || "");
-        setSerialNumber(currAsset.serialNumber || "");
-        setWarrantyExpirationDate(currAsset.warrantyExpirationDate || "");
-        setMaintenanceInterval(currAsset.maintenanceInterval || "");
-        setLastMaintenanceDate(currAsset.lastMaintenanceDate || "");
-        setNextMaintenanceDate(currAsset.nextMaintenanceDate || "");
-        setStatus(currAsset.status || "");
+      setAssetName(currAsset.assetName || "");
+      setAssetType(currAsset.assetType || "");
+      setAssetId(currAsset.assetId || "");
+      setLocationName(currAsset.locationName || "");
+      setAssetDescription(currAsset.assetDescription || "");
+      setPurchaseDate(currAsset.purchaseDate || "");
+      setManufacturer(currAsset.manufacturer || "");
+      setSerialNumber(currAsset.serialNumber || "");
+      setWarrantyExpirationDate(currAsset.warrantyExpirationDate || "");
+      setMaintenanceInterval(currAsset.maintenanceInterval || "");
+      setLastMaintenanceDate(currAsset.lastMaintenanceDate || "");
+      setNextMaintenanceDate(currAsset.nextMaintenanceDate || "");
+      setStatus(currAsset.status || "");
     }
   }, [currAsset]);
 
@@ -98,6 +98,22 @@ const UpdateAsset = () => {
       });
   };
 
+  const handleOnDelete = async () => {
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this asset?"
+    );
+
+    if (confirmed) {
+      try {
+        await axios.delete(`${api_url}/assets/${id}`);
+        alert("Asset deleted successfully!");
+        navigate("/assets");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
+
   return (
     <div className="update">
       <h2 className="update__title">Update Asset Information</h2>
@@ -113,9 +129,7 @@ const UpdateAsset = () => {
               id="assetName"
               name="assetName"
               value={assetName}
-              onChange={(e) =>
-                setAssetName(e.target.value)
-              }
+              onChange={(e) => setAssetName(e.target.value)}
             />
             <label htmlFor="assetType" className="update__label">
               Asset Type
@@ -126,9 +140,7 @@ const UpdateAsset = () => {
               id="assetType"
               name="assetType"
               value={assetType}
-              onChange={(e) =>
-                setAssetType(e.target.value)
-              }
+              onChange={(e) => setAssetType(e.target.value)}
             />
             <label htmlFor="assetId" className="update__label">
               Asset ID
@@ -139,9 +151,7 @@ const UpdateAsset = () => {
               id="assetId"
               name="assetId"
               value={assetId}
-              onChange={(e) =>
-                setAssetId(e.target.value)
-              }
+              onChange={(e) => setAssetId(e.target.value)}
             />
             <label htmlFor="assetDescription" className="update__label">
               Asset Description
@@ -151,9 +161,7 @@ const UpdateAsset = () => {
               id="assetDescription"
               name="assetDescription"
               value={assetDescription}
-              onChange={(e) =>
-                setAssetDescription(e.target.value)
-              }
+              onChange={(e) => setAssetDescription(e.target.value)}
             ></textarea>
             <label htmlFor="manufacturer" className="update__label">
               Manufacturer
@@ -164,27 +172,27 @@ const UpdateAsset = () => {
               id="manufacturer"
               name="manufacturer"
               value={manufacturer}
-              onChange={(e) =>
-                setManufacturer(e.target.value)
-              }
+              onChange={(e) => setManufacturer(e.target.value)}
             />
             {/* <div className="update__field-container"> */}
             <label htmlFor="serialNumber" className="update__label ">
               Serial Number
-              </label>
+            </label>
             <input
               type="text"
               className="update__input"
               id="serialNumber"
               name="serialNumber"
               value={serialNumber}
-              onChange={(e) =>
-                setSerialNumber(e.target.value)
-              }
+              onChange={(e) => setSerialNumber(e.target.value)}
             />
-            <label htmlFor="status" className="update__label update__secondary-label">
-              Status</label>
-              <label className="update__label">
+            <label
+              htmlFor="status"
+              className="update__label update__secondary-label"
+            >
+              Status
+            </label>
+            <label className="update__label">
               <input
                 type="checkbox"
                 className="update__check"
@@ -209,9 +217,7 @@ const UpdateAsset = () => {
               id="locationName"
               name="locationName"
               value={locationName}
-              onChange={(e) =>
-                setLocationName(e.target.value)
-              }
+              onChange={(e) => setLocationName(e.target.value)}
             />
             <label htmlFor="lastMaintenanceDate" className="update__label">
               Last Maintenance Date
@@ -222,10 +228,7 @@ const UpdateAsset = () => {
               id="lastMaintenanceDate"
               name="lastMaintenanceDate"
               value={date(lastMaintenanceDate)}
-              onChange={(e) =>
-                setLastMaintenanceDate(e.target.value
-                )
-              }
+              onChange={(e) => setLastMaintenanceDate(e.target.value)}
             />
             <label htmlFor="nextMaintenanceDate" className="update__label">
               Next Maintenance Date
@@ -236,10 +239,7 @@ const UpdateAsset = () => {
               id="nextMaintenanceDate"
               name="nextMaintenanceDate"
               value={date(nextMaintenanceDate)}
-              onChange={(e) =>
-                setNextMaintenanceDate( e.target.value
-                )
-              }
+              onChange={(e) => setNextMaintenanceDate(e.target.value)}
             />
             <label htmlFor="maintenanceInterval" className="update__label">
               Maintenance Interval
@@ -250,9 +250,7 @@ const UpdateAsset = () => {
               id="maintenanceInterval"
               name="maintenanceInterval"
               value={maintenanceInterval}
-              onChange={(e) =>
-                setMaintenanceInterval(e.target.value)
-              }
+              onChange={(e) => setMaintenanceInterval(e.target.value)}
             />
             <label htmlFor="purchaseDate" className="update__label">
               Purchase Date
@@ -263,9 +261,7 @@ const UpdateAsset = () => {
               id="purchaseDate"
               name="purchaseDate"
               value={date(purchaseDate)}
-              onChange={(e) =>
-                setPurchaseDate(e.target.value)
-              }
+              onChange={(e) => setPurchaseDate(e.target.value)}
             />
             <label htmlFor="warrantyExpirationDate" className="update__label">
               Warranty Expiration Date
@@ -276,15 +272,16 @@ const UpdateAsset = () => {
               id="warrantyExpirationDate"
               name="warrantyExpirationDate"
               value={date(warrantyExpirationDate)}
-              onChange={(e) =>
-                setWarrantyExpirationDate(e.target.value)
-              }
+              onChange={(e) => setWarrantyExpirationDate(e.target.value)}
             />
           </div>
         </div>
         <div className="update__buttons-container">
-        <button className="update__button" type="submit">
+          <button className="update__button" type="submit">
             Update
+          </button>
+          <button className="update__button" onClick={handleOnDelete}>
+            Delete
           </button>
           <NavLink
             to={`/assets/${id}`}
@@ -292,7 +289,6 @@ const UpdateAsset = () => {
           >
             Cancel
           </NavLink>
-          
         </div>
       </form>
     </div>

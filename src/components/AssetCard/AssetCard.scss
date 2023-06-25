@@ -9,6 +9,11 @@
   border-top: 1px rgb(37, 116, 165, 0.3) solid;
   padding: 2.5vw 0 2.5vw 0.5vw;
 
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   &__left {
     display: flex;
     flex-direction: column;
@@ -27,6 +32,11 @@
     display: flex;
     // justify-content: space-between;
     gap: 3rem;
+
+    @include tablet {
+      flex-direction: column;
+      gap: 0;
+    }
   }
 
   &__field {

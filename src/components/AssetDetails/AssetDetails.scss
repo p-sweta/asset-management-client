@@ -5,6 +5,14 @@
 .assetdetails {
   padding-bottom: 5vw;
 
+  &__container {
+    @include tablet {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+    }
+  }
+
   &__left {
     display: flex;
     flex-direction: column;

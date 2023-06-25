@@ -3,33 +3,38 @@
 @use "../../styles/partials/fonts" as *;
 
 .assetlist {
-    background-color: $white;
-    border-radius: 0.5rem;
-    padding: 1vw 5vw;
-    margin: 5vw;
-    box-shadow: 0 2px 16px $darkblue;
+  background-color: $white;
+  border-radius: 0.5rem;
+  padding: 1vw 5vw;
+  margin: 5vw;
+  box-shadow: 0 2px 16px $darkblue;
 
-    &__asset {
-        padding: 0;
-    }
+  @include tablet {
+    padding: 2.5vw 7vw;
+    margin: 8vw 10vw;
+  }
 
-    &__title {
+  &__asset {
+    padding: 0;
+  }
+
+  &__title {
     color: $darkblue;
-    }
+  }
 
-    &__link {
-        text-decoration: none;
-    }
+  &__link {
+    text-decoration: none;
+  }
 
-    &__item {
-        list-style-type: none;
-    }
+  &__item {
+    list-style-type: none;
+  }
 
-    &__details {
-        position: relative;
-    }
-    
-    &__details--not-selected {
-        display: none;
-    }
+  &__details {
+    position: relative;
+  }
+
+  &__details--not-selected {
+    display: none;
+  }
 }

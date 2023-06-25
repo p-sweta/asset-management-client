@@ -10,6 +10,7 @@ const AssetDetails = ({ currAsset }) => {
 
   return (
     <div className="assetdetails">
+      <div className="assetdetails__container">
       <div className="assetdetails__left">
         <div className="assetdetails__field">
           <label className="asset__label">ITEM DESCRIPTION:</label>
@@ -49,6 +50,7 @@ const AssetDetails = ({ currAsset }) => {
             {date(currAsset.warrantyExpirationDate)}
           </p>
         </div>
+      </div>
       </div>
       <div className="assetdetails__buttons">
         <Link

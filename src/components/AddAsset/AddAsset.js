@@ -71,6 +71,7 @@ const AddAsset = () => {
               name="assetName"
               placeholder="Asset Name"
               onChange={(e) => setAssetName(e.target.value)}
+              required
             />
             <label htmlFor="assetType" className="add__label">
               Asset Type
@@ -82,6 +83,7 @@ const AddAsset = () => {
               name="assetType"
               placeholder="Asset Type"
               onChange={(e) => setAssetType(e.target.value)}
+              required
             />
             <label htmlFor="assetId" className="add__label">
               Asset ID
@@ -93,16 +95,18 @@ const AddAsset = () => {
               name="assetId"
               placeholder="Asset ID"
               onChange={(e) => setAssetId(e.target.value)}
+              required
             />
             <label htmlFor="assetDescription" className="add__label">
               Asset Description
             </label>
             <textarea
-              className="add__input"
+              className="add__input add__textarea"
               id="assetDescription"
               name="assetDescription"
               placeholder="Asset Description"
               onChange={(e) => setAssetDescription(e.target.value)}
+              required
             ></textarea>
             <label htmlFor="manufacturer" className="add__label">
               Manufacturer
@@ -114,6 +118,7 @@ const AddAsset = () => {
               name="manufacturer"
               placeholder="Manufacturer"
               onChange={(e) => setManufacturer(e.target.value)}
+              required
             />
             {/* <div className="add__field-container"> */}
             <label htmlFor="serialNumber" className="add__label ">
@@ -126,6 +131,7 @@ const AddAsset = () => {
               name="serialNumber"
               placeholder="Serial Number"
               onChange={(e) => setSerialNumber(e.target.value)}
+              required
             />
             <label htmlFor="status" className="add__label add__secondary-label">
               Status
@@ -156,6 +162,7 @@ const AddAsset = () => {
               name="locationName"
               placeholder="Location Name"
               onChange={(e) => setLocationName(e.target.value)}
+              required
             />
             <label htmlFor="lastMaintenanceDate" className="add__label">
               Last Maintenance Date
@@ -167,6 +174,7 @@ const AddAsset = () => {
               name="lastMaintenanceDate"
               placeholder="MM/DD/YYYY"
               onChange={(e) => setLastMaintenanceDate(e.target.value)}
+              required
             />
             <label htmlFor="nextMaintenanceDate" className="add__label">
               Next Maintenance Date
@@ -178,6 +186,7 @@ const AddAsset = () => {
               name="nextMaintenanceDate"
               placeholder="MM/DD/YYYY"
               onChange={(e) => setNextMaintenanceDate(e.target.value)}
+              required
             />
             <label htmlFor="maintenanceInterval" className="add__label">
               Maintenance Interval
@@ -189,6 +198,7 @@ const AddAsset = () => {
               name="maintenanceInterval"
               placeholder="Maintenance Interval"
               onChange={(e) => setMaintenanceInterval(e.target.value)}
+              required
             />
             <label htmlFor="purchaseDate" className="add__label">
               Purchase Date
@@ -200,6 +210,7 @@ const AddAsset = () => {
               name="purchaseDate"
               placeholder="MM/DD/YYYY"
               onChange={(e) => setPurchaseDate(e.target.value)}
+              required
             />
             <label htmlFor="warrantyExpirationDate" className="add__label">
               Warranty Expiration Date
@@ -211,6 +222,7 @@ const AddAsset = () => {
               name="warrantyExpirationDate"
               placeholder="MM/DD/YYYY"
               onChange={(e) => setWarrantyExpirationDate(e.target.value)}
+              required
             />
           </div>
         </div>

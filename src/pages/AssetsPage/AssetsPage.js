@@ -8,14 +8,20 @@ import AddButton from "../../components/AddButton/AddButton";
 import "./AssetsPage.scss";
 
 const AssetsPage = () => {
+  const api_url = "http://localhost:8080";
   const { id } = useParams();
   const [assetsData, setAssetsData] = useState([]);
-  const api_url = "http://localhost:8080";
+  const [failedAuth, setFailedAuth] = useState(false);
 
   useEffect(() => {
     const getAssets = async () => {
       try {
         const token = sessionStorage.getItem("token");
+
+        if (!token) {
+          return setFailedAuth(true);
+        }
+
         const response = await axios.get(`${api_url}/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -24,6 +30,7 @@ const AssetsPage = () => {
         setAssetsData(response.data);
       } catch (err) {
         console.log(err);
+        setFailedAuth(true);
       }
     };
     getAssets();
@@ -51,11 +58,22 @@ const AssetsPage = () => {
     return <p>Loading...</p>;
   }
 
+  if (failedAuth) {
+    return (
+      <main className="assetslist">
+        <p>You must be logged in to see this page.</p>
+        <p>
+          <Link to="/">Log in</Link>
+        </p>
+      </main>
+    );
+  }
+
   //   console.log(assetsData);
   //   console.log(currAsset);
 
   return (
-    <div>
+    <div className="assetslist">
       <AssetList
         assetsData={assetsData}
         currAsset={currAsset}

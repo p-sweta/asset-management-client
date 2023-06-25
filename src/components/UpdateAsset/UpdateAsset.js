@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { NavLink, useNavigate, useParams } from "react-router-dom";
+import { Link, NavLink, useNavigate, useParams } from "react-router-dom";
 import { date } from "../../utils";
 import "./UpdateAsset.scss";
 
@@ -10,6 +10,7 @@ const UpdateAsset = () => {
   const api_url = "http://localhost:8080";
 
   const [assetsData, setAssetsData] = useState([]);
+  const [failedAuth, setFailedAuth] = useState(false);
   const [currAsset, setCurrAsset] = useState({});
   const [assetName, setAssetName] = useState("");
   const [assetType, setAssetType] = useState("");
@@ -28,10 +29,21 @@ const UpdateAsset = () => {
   useEffect(() => {
     const getAssets = async () => {
       try {
-        const response = await axios.get(`${api_url}/assets`);
+        const token = sessionStorage.getItem("token");
+
+        if (!token) {
+          return setFailedAuth(true);
+        }
+
+        const response = await axios.get(`${api_url}/assets`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          }
+        });
         setAssetsData(response.data);
       } catch (err) {
         console.log(err);
+        setFailedAuth(true);
       }
     };
     getAssets();
@@ -113,6 +125,17 @@ const UpdateAsset = () => {
       }
     }
   };
+
+  if (failedAuth) {
+    return (
+      <main className="update">
+        <p>You must be logged in to see this page.</p>
+        <p>
+          <Link to="/">Log in</Link>
+        </p>
+      </main>
+    );
+  }
 
   return (
     <div className="update">

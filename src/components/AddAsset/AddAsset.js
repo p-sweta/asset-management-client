@@ -7,7 +7,7 @@ import "./AddAsset.scss";
 const AddAsset = () => {
   const navigate = useNavigate();
   const api_url = "http://localhost:8080";
-
+  const [failedAuth, setFailedAuth] = useState(false);
   const [assetName, setAssetName] = useState("");
   const [assetType, setAssetType] = useState("");
   const [assetId, setAssetId] = useState("");

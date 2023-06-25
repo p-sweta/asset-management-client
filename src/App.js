@@ -6,6 +6,7 @@ import UpdateAssetPage from "./pages/UpdateAssetPage/UpdateAssetPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import AddAssetPage from "./pages/AddAssetPage/AddAssetPage";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 import './App.scss';
 
@@ -17,6 +18,7 @@ function App() {
         <Routes>
         <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/assets" element={<AssetsPage />} />
           <Route path="/assets/:id" element={<AssetsPage />} />
           <Route path="/assets/edit/:id" element={<UpdateAssetPage />} />

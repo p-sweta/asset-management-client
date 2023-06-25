@@ -60,8 +60,10 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
 
   return (
     <article className="assetlist">
+      <div className="assetlist__title-container">
       <h2 className="assetlist__title">ASSETS</h2>
       <SortButton onSort={handleOnSort} />
+      </div>
       <ul className="assetlist__asset">
         {sortedData.map((asset) => {
           return (

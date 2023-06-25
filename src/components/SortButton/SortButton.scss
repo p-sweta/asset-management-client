@@ -21,10 +21,11 @@
 
     @include tablet {
       margin-right: 0;
+      font-size: 0.75rem;
     }
 
     @include desktop {
-      width: 6.5%;
+      font-size: 0.85rem;
     }
 
     &:hover {

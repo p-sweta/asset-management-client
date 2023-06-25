@@ -14,6 +14,17 @@
     margin: 8vw 10vw;
   }
 
+  @include desktop {
+    padding: 4vw 8vw;
+    margin: 8vw 15vw;
+  }
+
+  &__title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
   &__asset {
     padding: 0;
   }

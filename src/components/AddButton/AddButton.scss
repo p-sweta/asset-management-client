@@ -22,6 +22,10 @@
       margin-bottom: 4rem;
     }
 
+    @include desktop {
+      margin-bottom: 6rem;
+    }
+
     &:hover {
         color: $white;
     }

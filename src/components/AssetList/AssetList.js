@@ -28,7 +28,7 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
           a.assetName.localeCompare(b.assetName)
         );
         break;
-        case "Type":
+      case "Type":
         sortedAssets = [...assetsData].sort((a, b) =>
           a.assetType.localeCompare(b.assetType)
         );
@@ -38,7 +38,7 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
           a.assetId.localeCompare(b.assetId)
         );
         break;
-        case "Location":
+      case "Location":
         sortedAssets = [...assetsData].sort((a, b) =>
           a.locationName.localeCompare(b.locationName)
         );
@@ -61,44 +61,42 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
   return (
     <article className="assetlist">
       <div className="assetlist__title-container">
-      <h2 className="assetlist__title">ASSETS</h2>
-      <SortButton onSort={handleOnSort} />
+        <h2 className="assetlist__title">ASSETS</h2>
+        <SortButton onSort={handleOnSort} />
       </div>
       <ul className="assetlist__asset">
         {sortedData.map((asset) => {
           return (
-              <li
-                key={asset._id}
-                className={`assetlist__item ${
-                  asset._id === selectedAssetId
-                    ? "assetlist__item--selected"
-                    : ""
-                }`}
-                onClick={() => handleAssetClick(asset._id)}
+            <li
+              key={asset._id}
+              className={`assetlist__item ${
+                asset._id === selectedAssetId ? "assetlist__item--selected" : ""
+              }`}
+              onClick={() => handleAssetClick(asset._id)}
+            >
+              <NavLink
+                to={`/assets/${asset._id}`}
+                className="assetlist__link"
+                activeclassname="active"
               >
-                <NavLink
-                  to={`/assets/${asset._id}`}
-                  className="assetlist__link"
-                  activeclassname="active"
+                <AssetCard
+                  name={asset.assetName}
+                  type={asset.assetType}
+                  assetId={asset.assetId}
+                  location={asset.locationName}
+                  lastMaintenancedate={date(asset.lastMaintenanceDate)}
+                />
+              </NavLink>
+              {asset._id === selectedAssetId && (
+                <div
+                  className={`assetlist__details ${
+                    !selectedAssetId ? "assetlist__details--not-selected" : ""
+                  }`}
                 >
-                  <AssetCard
-                    name={asset.assetName}
-                    type={asset.assetType}
-                    assetId={asset.assetId}
-                    location={asset.locationName}
-                    lastMaintenancedate={date(asset.lastMaintenanceDate)}
-                  />
-                </NavLink>
-                {asset._id === selectedAssetId && (
-                  <div
-                    className={`assetlist__details ${
-                      !selectedAssetId ? "assetlist__details--not-selected" : ""
-                    }`}
-                  >
-                    <AssetDetails currAsset={asset} />
-                  </div>
-                )}
-              </li>
+                  <AssetDetails currAsset={asset} />
+                </div>
+              )}
+            </li>
           );
         })}
       </ul>

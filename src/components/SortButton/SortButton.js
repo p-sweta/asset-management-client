@@ -15,7 +15,7 @@ const SortButton = ({ onSort }) => {
     <div className="sort">
       <button className="sort__toggle" 
         onClick={() => setIsOpen(!isOpen)}>
-        Sort By: {selection || "Select an option"}
+        Sort By: {selection || "Select an Option"}
       </button>
       {isOpen && (
       <ul className="sort__menu">

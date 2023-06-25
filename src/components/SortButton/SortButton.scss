@@ -1,3 +1,54 @@
 @use "../../styles/partials/variables.scss" as *;
 @use "../../styles/partials/mixins.scss" as *;
 @use "../../styles/partials/fonts" as *;
+
+.sort {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  &__toggle {
+    width: auto;
+    padding: 0.4rem;
+    border: 1px solid $darkblue;
+    border-radius: 0.625rem;
+    background-color: $darkblue;
+    color: $lightgray;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.15s;
+
+    @include tablet {
+      margin-right: 0;
+    }
+
+    @include desktop {
+      width: 6.5%;
+    }
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &__menu {
+    list-style-type: none;
+    margin: 0.2rem 0 0 0;
+    padding: 0 0.5rem;
+    color: $darkblue;
+    font-size: 0.7rem;
+    box-shadow: 0 2px 16px $darkblue;
+    background-color: #fff;
+    border-radius: 0.5rem;
+  }
+
+  &__option {
+    padding: 0.2rem;
+    cursor: pointer;
+
+    &:hover {
+    font-weight: 600;
+    }
+  }
+}

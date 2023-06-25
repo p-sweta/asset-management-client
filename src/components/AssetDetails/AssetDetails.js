@@ -44,7 +44,7 @@ const AssetDetails = ({ currAsset }) => {
           <p className="assetdetails__text">{date(currAsset.purchaseDate)}</p>
         </div>
         <div className="assetdetails__field">
-          <label className="asset__label">WARRANTY EXPIRATION DATE:</label>
+          <label className="asset__label">WARRANTY EXPIRATION:</label>
           <p className="assetdetails__text">
             {date(currAsset.warrantyExpirationDate)}
           </p>

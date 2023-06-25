@@ -3,7 +3,11 @@
 @use "../../styles/partials/fonts" as *;
 
 .assetlist {
-    @include page-padding;
+    background-color: $white;
+    border-radius: 0.5rem;
+    padding: 1vw 5vw;
+    margin: 5vw;
+    box-shadow: 0 2px 16px $darkblue;
 
     &__asset {
         padding: 0;

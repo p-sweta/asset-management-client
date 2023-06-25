@@ -19,7 +19,7 @@ const AssetsPage = () => {
         const response = await axios.get(`${api_url}/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
-          },
+          }
         });
         setAssetsData(response.data);
       } catch (err) {

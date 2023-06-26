@@ -15,6 +15,12 @@ const Dashboard = () => {
       </Link>
       <div className="dashboard__card-container">
         <div className="dashboard__card-content">
+          <p className="dashboard__card-text">Location</p>
+        </div>
+        <div className="dashboard__card-shadow"></div>
+      </div>
+      <div className="dashboard__card-container">
+        <div className="dashboard__card-content">
           <p className="dashboard__card-text">Equipment Performance</p>
         </div>
         <div className="dashboard__card-shadow"></div>
@@ -22,12 +28,6 @@ const Dashboard = () => {
       <div className="dashboard__card-container">
         <div className="dashboard__card-content">
           <p className="dashboard__card-text">Maintenance</p>
-        </div>
-        <div className="dashboard__card-shadow"></div>
-      </div>
-      <div className="dashboard__card-container">
-        <div className="dashboard__card-content">
-          <p className="dashboard__card-text">Location</p>
         </div>
         <div className="dashboard__card-shadow"></div>
       </div>

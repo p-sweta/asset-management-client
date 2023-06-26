@@ -3,7 +3,7 @@
 @use "../../styles/partials/fonts" as *;
 
 .assetdetails {
-  padding-bottom: 5vw;
+  padding: 0 0 5vw 0.5vw;
 
   &__container {
     @include tablet {

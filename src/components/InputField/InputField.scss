@@ -7,7 +7,7 @@
   flex-direction: column;
 
   &__label {
-    margin-bottom: 2vw;
+    margin-bottom: 1.5vw;
     text-align: left;
     font-size: 0.8rem;
 
@@ -16,7 +16,7 @@
     }
 
     @include desktop {
-      margin-bottom: 1.5vw;
+      margin-bottom: 1vw;
     }
   }
 
@@ -29,12 +29,12 @@
     font-size: 0.8rem;
 
     @include tablet {
-      margin-bottom: 4vw;
+      margin-bottom: 3vw;
         font-size: 0.9rem;
     }
 
     @include desktop {
-      margin-bottom: 3vw;
+      margin-bottom: 1.6vw;
     }
 
     &::placeholder {

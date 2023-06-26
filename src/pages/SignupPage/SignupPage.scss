@@ -6,16 +6,17 @@
   @include page-padding;
   display: flex;
   flex-direction: column;
-  margin: 20vw 5vw;
+  margin: 10vw 5vw;
   justify-content: center;
   align-items: center;
 
   @include tablet {
-    margin: 20vw 15vw;
+    margin: 10vw 15vw;
 }
 
 @include desktop {
-  margin: 15vw 25vw 25vw 25vw;
+  width: 50%;
+  margin: 2vw 25vw 20vw 25vw;
 }
 
   &__form {

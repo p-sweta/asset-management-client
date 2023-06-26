@@ -3,6 +3,8 @@
 @use "../../styles/partials/fonts" as *;
 
 .assetlist {
+  display: flex;
+  flex-direction: column;
   background-color: $white;
   border-radius: 0.5rem;
   padding: 1vw 5vw;
@@ -17,6 +19,21 @@
   @include desktop {
     padding: 4vw 8vw;
     margin: 8vw 15vw;
+  }
+
+  &__report {
+    align-self: flex-end;
+    width: 40%;
+    border-radius: 0.625rem;
+    border: none;
+    background-color: rgb(161, 195, 10);
+    padding: 0.3rem 0rem;
+    font-size: 0.7rem;
+
+    @include tablet {
+      width: 25%;
+      padding: 0.3rem 0.2rem;
+    }
   }
 
   &__title-container {

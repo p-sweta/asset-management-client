@@ -303,7 +303,7 @@ const UpdateAsset = () => {
           <button className="update__button" type="submit">
             Update
           </button>
-          <button className="update__button" onClick={handleOnDelete}>
+          <button className="update__button update__button--delete" onClick={handleOnDelete}>
             Delete
           </button>
           <NavLink

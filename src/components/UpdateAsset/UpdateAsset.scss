@@ -6,11 +6,22 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 2rem 1rem 2rem 1rem;
+  margin: 10vw 5vw;
+  padding: 0.5rem;
   width: auto;
   border-radius: 5px;
-  box-shadow: 0px 2px 5px $darkblue;
-  border-radius: 3px;
+  box-shadow: 0 2px 16px $darkblue;
+  border-radius: 0.5rem;
+
+  @include tablet {
+    padding: 2.5vw 1.5vw;
+    margin: 8vw 10vw;
+  }
+
+  @include desktop {
+    padding: 5vw 3vw;
+    margin: 8vw 15vw;
+  }
 
   &__title {
     font-size: 1.5rem;
@@ -50,75 +61,68 @@
 }
 
 &__label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding-bottom: 0.2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding-bottom: 0.2rem;
 
-    @include tablet {
-      font-size: 0.85rem;
-      padding-bottom: 0.5rem;
-    }
-
-    @include desktop {
-      font-size: 0.9rem;
-    }
+  @include tablet {
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
   }
 
-  &__input {
-    border: solid 1px $gray;
-    border-radius: 0.625rem;
+  @include desktop {
+    font-size: 0.9rem;
+  }
+}
+
+&__input {
+  border: solid 1px $gray;
+  border-radius: 0.625rem;
+  margin-bottom: 5vw;
+  color: $darkblue;
+  font-size: 0.8rem;
+  padding: 0.5rem 1rem;
+
+  @include tablet {
     margin-bottom: 4vw;
-    height: 2rem;
-    color: $black;
-    font-size: 0.75rem;
-    padding: 0 0.5rem;
-
-    @include tablet {
-      height: 2.4rem;
-      font-size: 0.9rem;
-      padding: 0 0.85rem;
-      margin-bottom: 3.4vw;
-    }
-
-    @include desktop {
-      padding: 0 0.95rem;
-      margin-bottom: 2vw;
-    }
+    font-size: 0.9rem;
   }
 
-  &__textarea {
-    border: solid 1px $gray;
-    border-radius: 20px;
-    margin-bottom: 4vw;
-    height: 6.5rem;
-    resize: none;
-    overflow: hidden;
-    color: $black;
-    font-size: 0.75rem;
-    padding: 0.4rem 0.8rem 0 0.8rem;
-
-    @include tablet {
-      margin-bottom: 3.4vw;
-      height: 7.5rem;
-      font-size: 0.88rem;
-      padding: 0.4rem 0.85rem 0 0.85rem;
-    }
-
-    @include desktop {
-      padding: 0.4rem 0.95rem 0 0.95rem;
-      margin-bottom: 2.1vw;
-    }
+  @include desktop {
+    margin-bottom: 3vw;
+    font-size: 1rem;
   }
+}
+
+&__textarea {
+  border: solid 1px $gray;
+  border-radius: 0.625rem;
+  margin-bottom: 4vw;
+  resize: none;
+  overflow: hidden;
+  color: $black;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem 0 0.8rem;
+
+  @include tablet {
+    margin-bottom: 3.4vw;
+    font-size: 0.88rem;
+    padding: 0.4rem 0.85rem 0 0.85rem;
+  }
+
+  @include desktop {
+    padding: 0.4rem 0.95rem 0 0.95rem;
+    margin-bottom: 2.1vw;
+  }
+}
 
   &__field-container {
-
     @include tablet {
     display: flex;
     gap: 5rem;
     align-items: baseline;
     }
   }
-
 
   &__buttons-container {
     display: flex;
@@ -129,47 +133,61 @@
 
     @include tablet {
       width: 100%;
-      justify-content: flex-end;
-      padding: 0.6rem 2rem 0.8rem 1.2rem;
+      padding: 0.6rem 1.4rem 1.5rem 1.8rem;
     }
 
     @include desktop {
-      padding: 1.1rem 2.5rem 0.8rem 1.2rem;
+      padding: 1.1rem 1.85rem 1.5rem 1.85rem;
     }
   }
 
   &__button {
-    width: 50%;
-    height: 2rem;
-    border: 1px solid $darkblue;
-    border-radius: 0.625rem;
-    background-color: $darkblue;
     color: $lightgray;
-    font-size: 1rem;
+    text-align: center;
+    width: 30%;
+    font-size: 0.8rem;
     font-weight: 600;
+    margin: 1rem 0 0.5rem 0;
+    padding: 0.4rem 0.7rem;
+    background-color: $darkblue;
+    border-radius: 0.625rem;
+    border: 1px solid $darkblue;
     cursor: pointer;
     transition: background-color 0.15s;
 
     @include tablet {
-      width: 9.5%;
-      height: 2.4rem;
+      padding: 0.5rem 1rem;
       margin-right: 0;
+      font-size: 0.75rem;
+      width: 30%;
     }
 
     @include desktop {
-      width: 6.5%;
+      font-size: 0.8rem;
+      width: 25%;
     }
 
     &:hover {
-        border-color: green;
-        color: green;
+      border-color: green;
+      color: green;
+      background-color: $white;
+    }
+
+    &--delete {
+      background-color: rgb(144, 0, 0);
+      border: 1px solid rgb(144, 0, 0);
+
+      &:hover {
+        border-color: red;
+        color: red;
         background-color: $white;
+      }
     }
   }
+
   &__button--cancel {
     background-color: $white;
     border: 1px solid $gray;
-    border-radius: 0.625rem;
     color: $gray;
     margin-right: 1rem;
     text-align: center;
@@ -178,11 +196,11 @@
     align-items: center;
 
     @include tablet {
-      width: 11%;
+      width: 30%;
     }
 
     @include desktop {
-      width: 7.5%;
+      width: 25%;
     }
 
     &:hover {

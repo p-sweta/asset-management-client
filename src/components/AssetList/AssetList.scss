@@ -12,8 +12,8 @@
   box-shadow: 0 2px 16px $darkblue;
 
   @include tablet {
-    padding: 2.5vw 7vw;
-    margin: 8vw 10vw;
+    padding: 2.5vw 5vw;
+    margin: 8vw;
   }
 
   @include desktop {

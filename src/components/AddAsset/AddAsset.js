@@ -8,18 +8,18 @@ const AddAsset = () => {
   const navigate = useNavigate();
   const api_url = "http://localhost:8080";
   const [failedAuth, setFailedAuth] = useState(false);
-  const [assetName, setAssetName] = useState("");
-  const [assetType, setAssetType] = useState("");
-  const [assetId, setAssetId] = useState("");
-  const [locationName, setLocationName] = useState("");
-  const [assetDescription, setAssetDescription] = useState("");
-  const [purchaseDate, setPurchaseDate] = useState("");
-  const [manufacturer, setManufacturer] = useState("");
-  const [serialNumber, setSerialNumber] = useState("");
-  const [warrantyExpirationDate, setWarrantyExpirationDate] = useState("");
-  const [maintenanceInterval, setMaintenanceInterval] = useState("");
-  const [lastMaintenanceDate, setLastMaintenanceDate] = useState("");
-  const [nextMaintenanceDate, setNextMaintenanceDate] = useState("");
+  const [assetName, setAssetName] = useState("Pump C");
+  const [assetType, setAssetType] = useState("Pump");
+  const [assetId, setAssetId] = useState("P-25");
+  const [locationName, setLocationName] = useState("Pump Station 1");
+  const [assetDescription, setAssetDescription] = useState("Centrifugal pump for water supply");
+  const [purchaseDate, setPurchaseDate] = useState("01/01/2020");
+  const [manufacturer, setManufacturer] = useState("Grundfos");
+  const [serialNumber, setSerialNumber] = useState("PUMP005");
+  const [warrantyExpirationDate, setWarrantyExpirationDate] = useState("01/01/2025");
+  const [maintenanceInterval, setMaintenanceInterval] = useState("Monthly");
+  const [lastMaintenanceDate, setLastMaintenanceDate] = useState("01/05/2022");
+  const [nextMaintenanceDate, setNextMaintenanceDate] = useState("02/05/2022");
   const [status, setStatus] = useState(false);
 
   const handleStatusValue = () => {
@@ -69,7 +69,8 @@ const AddAsset = () => {
               className="add__input"
               id="assetName"
               name="assetName"
-              placeholder="Asset Name"
+              // placeholder="Asset Name"
+              value={assetName}
               onChange={(e) => setAssetName(e.target.value)}
               required
             />
@@ -81,7 +82,8 @@ const AddAsset = () => {
               className="add__input"
               id="assetType"
               name="assetType"
-              placeholder="Asset Type"
+              // placeholder="Asset Type"
+              value={assetType}
               onChange={(e) => setAssetType(e.target.value)}
               required
             />
@@ -93,7 +95,8 @@ const AddAsset = () => {
               className="add__input"
               id="assetId"
               name="assetId"
-              placeholder="Asset ID"
+              // placeholder="Asset ID"
+              value={assetId}
               onChange={(e) => setAssetId(e.target.value)}
               required
             />
@@ -104,7 +107,8 @@ const AddAsset = () => {
               className="add__input add__textarea"
               id="assetDescription"
               name="assetDescription"
-              placeholder="Asset Description"
+              // placeholder="Asset Description"
+              value={assetDescription}
               onChange={(e) => setAssetDescription(e.target.value)}
               required
             ></textarea>
@@ -116,7 +120,8 @@ const AddAsset = () => {
               className="add__input"
               id="manufacturer"
               name="manufacturer"
-              placeholder="Manufacturer"
+              // placeholder="Manufacturer"
+              value={manufacturer}
               onChange={(e) => setManufacturer(e.target.value)}
               required
             />
@@ -129,7 +134,8 @@ const AddAsset = () => {
               className="add__input"
               id="serialNumber"
               name="serialNumber"
-              placeholder="Serial Number"
+              // placeholder="Serial Number"
+              value={serialNumber}
               onChange={(e) => setSerialNumber(e.target.value)}
               required
             />
@@ -142,7 +148,7 @@ const AddAsset = () => {
                 className="add__check"
                 id="status"
                 name="status"
-                checked={status === "Active"}
+                checked={status}
                 onChange={
                   handleStatusValue
                 }
@@ -160,7 +166,8 @@ const AddAsset = () => {
               className="add__input"
               id="locationName"
               name="locationName"
-              placeholder="Location Name"
+              // placeholder="Location Name"
+              value={locationName}
               onChange={(e) => setLocationName(e.target.value)}
               required
             />
@@ -172,7 +179,8 @@ const AddAsset = () => {
               className="add__input"
               id="lastMaintenanceDate"
               name="lastMaintenanceDate"
-              placeholder="MM/DD/YYYY"
+              // placeholder="MM/DD/YYYY"
+              value={lastMaintenanceDate}
               onChange={(e) => setLastMaintenanceDate(e.target.value)}
               required
             />
@@ -184,7 +192,8 @@ const AddAsset = () => {
               className="add__input"
               id="nextMaintenanceDate"
               name="nextMaintenanceDate"
-              placeholder="MM/DD/YYYY"
+              // placeholder="MM/DD/YYYY"
+              value={nextMaintenanceDate}
               onChange={(e) => setNextMaintenanceDate(e.target.value)}
               required
             />
@@ -196,7 +205,8 @@ const AddAsset = () => {
               className="add__input"
               id="maintenanceInterval"
               name="maintenanceInterval"
-              placeholder="Maintenance Interval"
+              // placeholder="Maintenance Interval"
+              value={maintenanceInterval}
               onChange={(e) => setMaintenanceInterval(e.target.value)}
               required
             />
@@ -208,7 +218,8 @@ const AddAsset = () => {
               className="add__input"
               id="purchaseDate"
               name="purchaseDate"
-              placeholder="MM/DD/YYYY"
+              // placeholder="MM/DD/YYYY"
+              value={purchaseDate}
               onChange={(e) => setPurchaseDate(e.target.value)}
               required
             />
@@ -220,7 +231,8 @@ const AddAsset = () => {
               className="add__input"
               id="warrantyExpirationDate"
               name="warrantyExpirationDate"
-              placeholder="MM/DD/YYYY"
+              // placeholder="MM/DD/YYYY"
+              value={warrantyExpirationDate}
               onChange={(e) => setWarrantyExpirationDate(e.target.value)}
               required
             />

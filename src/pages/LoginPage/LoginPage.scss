@@ -6,16 +6,16 @@
   @include page-padding;
   display: flex;
   flex-direction: column;
-  margin: 20vw 5vw;
+  margin: 25vw 7vw;
   justify-content: center;
   align-items: center;
 
   @include tablet {
-    margin: 20vw 15vw;
+    margin: 20vw 17vw;
   }
 
   @include desktop {
-    margin: 15vw 25vw 25vw 25vw;
+    margin: 10vw 30vw 10vw 30vw;
   }
 
   &__form {
@@ -82,7 +82,8 @@
   &__link {
     font-weight: 400;
     text-decoration: none;
-    color: $white;
+    // color: $white;
+    color: rgb(22, 112, 151);
     cursor: pointer;
 
     @include tablet {

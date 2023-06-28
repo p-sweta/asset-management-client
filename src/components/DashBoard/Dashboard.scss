@@ -14,8 +14,10 @@
     margin-top: 8vw;
     margin-bottom: 8vw;
     display: flex;
+    // justify-content: space-between;
     // flex-direction: column;
     flex-wrap: wrap;
+    gap: 5vw;
 
     &__link {
         text-decoration: none;
@@ -28,6 +30,7 @@
         width: 16rem;
         position: relative;
         margin: 0.6rem auto 2rem auto;
+        // margin-right: 1vw;
         border-radius: 10px;
         border: solid 1px $darkblue;
         display: flex;

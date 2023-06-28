@@ -11,46 +11,54 @@ const AssetDetails = ({ currAsset }) => {
   return (
     <div className="assetdetails">
       <div className="assetdetails__container">
-      <div className="assetdetails__left">
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">ITEM DESCRIPTION:</label>
-          <p className="assetdetails__text">{currAsset.assetDescription}</p>
+        <div className="assetdetails__left">
+          <div className="assetdetails__field assetdetails__field--description">
+            <label className="assetdetails__label assetdetails__label--description">
+              ITEM DESCRIPTION:
+            </label>
+            <p className="assetdetails__text assetdetails__label--description">
+              {currAsset.assetDescription}
+            </p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">MANUFACTURER:</label>
+            <p className="assetdetails__text">{currAsset.manufacturer}</p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">SERIAL #:</label>
+            <p className="assetdetails__text">{currAsset.serialNumber}</p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">STATUS:</label>
+            <p className="assetdetails__text">{currAsset.status}</p>
+          </div>
         </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">MANUFACTURER:</label>
-          <p className="assetdetails__text">{currAsset.manufacturer}</p>
+        <div className="assetdetails__right">
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">
+              NEXT MAINTENANCE DATE:
+            </label>
+            <p className="assetdetails__text">
+              {date(currAsset.nextMaintenanceDate)}
+            </p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">MAINTENANCE INTERVAL:</label>
+            <p className="assetdetails__text">
+              {currAsset.maintenanceInterval}
+            </p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">PURCHASE DATE:</label>
+            <p className="assetdetails__text">{date(currAsset.purchaseDate)}</p>
+          </div>
+          <div className="assetdetails__field">
+            <label className="assetdetails__label">WARRANTY EXPIRATION:</label>
+            <p className="assetdetails__text">
+              {date(currAsset.warrantyExpirationDate)}
+            </p>
+          </div>
         </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">SERIAL #:</label>
-          <p className="assetdetails__text">{currAsset.serialNumber}</p>
-        </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">STATUS:</label>
-          <p className="assetdetails__text">{currAsset.status}</p>
-        </div>
-      </div>
-      <div className="assetdetails__right">
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">NEXT MAINTENANCE DATE:</label>
-          <p className="assetdetails__text">
-            {date(currAsset.nextMaintenanceDate)}
-          </p>
-        </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">MAINTENANCE INTERVAL:</label>
-          <p className="assetdetails__text">{currAsset.maintenanceInterval}</p>
-        </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">PURCHASE DATE:</label>
-          <p className="assetdetails__text">{date(currAsset.purchaseDate)}</p>
-        </div>
-        <div className="assetdetails__field">
-          <label className="assetdetails__label">WARRANTY EXPIRATION:</label>
-          <p className="assetdetails__text">
-            {date(currAsset.warrantyExpirationDate)}
-          </p>
-        </div>
-      </div>
       </div>
       <div className="assetdetails__buttons">
         <Link

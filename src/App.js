@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import SignupPage from "./pages/SignupPage/SignupPage";
 import AddAssetPage from "./pages/AddAssetPage/AddAssetPage";
 import DashboardPage from "./pages/DashboardPage/DashboardPage";
-import './App.scss';
+import "./App.scss";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-        <Route path="/" element={<LoginPage />} />
+          <Route path="/" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/assets" element={<AssetsPage />} />

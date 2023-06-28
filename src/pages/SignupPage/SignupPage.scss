@@ -12,12 +12,12 @@
 
   @include tablet {
     margin: 10vw 15vw;
-}
+  }
 
-@include desktop {
-  width: 50%;
-  margin: 2vw 25vw 20vw 25vw;
-}
+  @include desktop {
+    width: 50%;
+    margin: 2vw 25vw 20vw 25vw;
+  }
 
   &__form {
     display: flex;
@@ -70,7 +70,7 @@
 
     @include tablet {
       font-size: 0.7rem;
-  }
+    }
   }
 
   &__link {
@@ -81,7 +81,7 @@
 
     @include tablet {
       color: rgb(22, 112, 151);
-  }
+    }
   }
 
   &__alert {

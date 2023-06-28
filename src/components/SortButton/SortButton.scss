@@ -3,9 +3,9 @@
 @use "../../styles/partials/fonts" as *;
 
 .sort {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__toggle {
     width: auto;
@@ -49,7 +49,7 @@
     cursor: pointer;
 
     &:hover {
-    font-weight: 600;
+      font-weight: 600;
     }
   }
 }

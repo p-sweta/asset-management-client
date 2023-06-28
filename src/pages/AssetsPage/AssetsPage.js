@@ -25,7 +25,7 @@ const AssetsPage = () => {
         const response = await axios.get(`${api_url}/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
-          }
+          },
         });
         setAssetsData(response.data);
       } catch (err) {
@@ -68,9 +68,6 @@ const AssetsPage = () => {
       </main>
     );
   }
-
-  //   console.log(assetsData);
-  //   console.log(currAsset);
 
   return (
     <div className="assetslist">

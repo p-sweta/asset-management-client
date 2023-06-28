@@ -1,7 +1,7 @@
 import { date } from "../../utils";
 import { writeFile } from "xlsx";
-import * as FileSaver from 'file-saver';
-import * as XLSX from 'xlsx';
+import * as FileSaver from "file-saver";
+import * as XLSX from "xlsx";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import AssetDetails from "../AssetDetails/AssetDetails";
@@ -62,7 +62,7 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
   };
 
   const saveAsExcelFile = (buffer, fileName) => {
-    const data = new Blob([buffer], { type: 'application/octet-stream' });
+    const data = new Blob([buffer], { type: "application/octet-stream" });
     FileSaver.saveAs(data, fileName);
   };
   const generateReport = (assetsData) => {
@@ -70,14 +70,21 @@ const AssetList = ({ assetsData, currAsset, setCurrAsset }) => {
     const workbook = XLSX.utils.book_new();
 
     XLSX.utils.book_append_sheet(workbook, worksheet, "Asset Report");
-    const excelBuffer = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
-    saveAsExcelFile(excelBuffer, 'asset_report.xlsx'); 
-  }
- 
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
+    saveAsExcelFile(excelBuffer, "asset_report.xlsx");
+  };
 
   return (
     <article className="assetlist">
-      <button className="assetlist__report" onClick={() => generateReport(assetsData)}>Generate Report 📝</button>
+      <button
+        className="assetlist__report"
+        onClick={() => generateReport(assetsData)}
+      >
+        Generate Report 📝
+      </button>
       <div className="assetlist__title-container">
         <h2 className="assetlist__title">ASSETS</h2>
         <SortButton onSort={handleOnSort} />

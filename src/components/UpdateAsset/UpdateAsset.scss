@@ -58,69 +58,69 @@
     @include desktop {
       padding: 1.35rem 2.5rem 0 2.5rem;
     }
-}
-
-&__label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding-bottom: 0.2rem;
-
-  @include tablet {
-    font-size: 0.85rem;
-    padding-bottom: 0.5rem;
   }
 
-  @include desktop {
-    font-size: 0.9rem;
+  &__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding-bottom: 0.2rem;
+
+    @include tablet {
+      font-size: 0.85rem;
+      padding-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      font-size: 0.9rem;
+    }
   }
-}
 
-&__input {
-  border: solid 1px $gray;
-  border-radius: 0.625rem;
-  margin-bottom: 5vw;
-  color: $darkblue;
-  font-size: 0.8rem;
-  padding: 0.5rem 1rem;
+  &__input {
+    border: solid 1px $gray;
+    border-radius: 0.625rem;
+    margin-bottom: 5vw;
+    color: $darkblue;
+    font-size: 0.8rem;
+    padding: 0.5rem 1rem;
 
-  @include tablet {
+    @include tablet {
+      margin-bottom: 4vw;
+      font-size: 0.9rem;
+    }
+
+    @include desktop {
+      margin-bottom: 3vw;
+      font-size: 1rem;
+    }
+  }
+
+  &__textarea {
+    border: solid 1px $gray;
+    border-radius: 0.625rem;
     margin-bottom: 4vw;
-    font-size: 0.9rem;
-  }
+    resize: none;
+    overflow: hidden;
+    color: $black;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem 0 0.8rem;
 
-  @include desktop {
-    margin-bottom: 3vw;
-    font-size: 1rem;
-  }
-}
+    @include tablet {
+      margin-bottom: 3.4vw;
+      font-size: 0.88rem;
+      padding: 0.4rem 0.85rem 0 0.85rem;
+    }
 
-&__textarea {
-  border: solid 1px $gray;
-  border-radius: 0.625rem;
-  margin-bottom: 4vw;
-  resize: none;
-  overflow: hidden;
-  color: $black;
-  font-size: 0.75rem;
-  padding: 0.4rem 0.8rem 0 0.8rem;
-
-  @include tablet {
-    margin-bottom: 3.4vw;
-    font-size: 0.88rem;
-    padding: 0.4rem 0.85rem 0 0.85rem;
+    @include desktop {
+      padding: 0.4rem 0.95rem 0 0.95rem;
+      margin-bottom: 2.1vw;
+    }
   }
-
-  @include desktop {
-    padding: 0.4rem 0.95rem 0 0.95rem;
-    margin-bottom: 2.1vw;
-  }
-}
 
   &__field-container {
     @include tablet {
-    display: flex;
-    gap: 5rem;
-    align-items: baseline;
+      display: flex;
+      gap: 5rem;
+      align-items: baseline;
     }
   }
 

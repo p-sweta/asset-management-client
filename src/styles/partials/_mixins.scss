@@ -1,17 +1,17 @@
-@use './variables' as *;
+@use "./variables" as *;
 
 @mixin page-padding {
   padding: 0 5vw;
 }
 
 @mixin tablet {
-    @media (min-width: $tablet-breakpoint) {
-      @content;
-    }
+  @media (min-width: $tablet-breakpoint) {
+    @content;
   }
-  
-  @mixin desktop {
-    @media (min-width: $desktop-breakpoint) {
-      @content;
-    }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
   }
+}

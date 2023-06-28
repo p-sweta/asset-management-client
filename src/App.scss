@@ -18,7 +18,11 @@ body {
 .App {
   text-align: center;
   background-color: $lightblue;
-  background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1), rgba(30, 54, 84, 1));
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 1),
+    rgba(30, 54, 84, 1)
+  );
   min-height: 100vh;
   display: flex;
   flex-direction: column;

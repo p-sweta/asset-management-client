@@ -4,7 +4,7 @@ import "./Dashboard.scss";
 const Dashboard = () => {
   return (
     <div className="dashboard">
-      <Link to={"/assets"} className="dashboard__link" >
+      <Link to={"/assets"} className="dashboard__link">
         <div className="dashboard__card-container">
           <div className="dashboard__card-content">
             <p className="dashboard__card-text">AMS</p>

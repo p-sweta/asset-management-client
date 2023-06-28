@@ -19,15 +19,15 @@ const AssetCard = ({ name, type, assetId, location, lastMaintenancedate }) => {
           </div>
         </div>
       </div>
-      <div  className="asset__right">
-      <div className="asset__field">
-        <label className="asset__label">LOCATION:</label>
-        <p className="asset__text">{location}</p>
-      </div>
-      <div className="asset__field">
-        <label className="asset__label">LAST MAINTENANCE DATE:</label>
-        <p className="asset__text">{lastMaintenancedate}</p>
-      </div>
+      <div className="asset__right">
+        <div className="asset__field">
+          <label className="asset__label">LOCATION:</label>
+          <p className="asset__text">{location}</p>
+        </div>
+        <div className="asset__field">
+          <label className="asset__label">LAST MAINTENANCE DATE:</label>
+          <p className="asset__text">{lastMaintenancedate}</p>
+        </div>
       </div>
     </div>
   );

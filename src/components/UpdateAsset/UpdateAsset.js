@@ -38,7 +38,7 @@ const UpdateAsset = () => {
         const response = await axios.get(`${api_url}/assets`, {
           headers: {
             Authorization: `Bearer ${token}`,
-          }
+          },
         });
         setAssetsData(response.data);
       } catch (err) {
@@ -303,7 +303,10 @@ const UpdateAsset = () => {
           <button className="update__button" type="submit">
             Update
           </button>
-          <button className="update__button update__button--delete" onClick={handleOnDelete}>
+          <button
+            className="update__button update__button--delete"
+            onClick={handleOnDelete}
+          >
             Delete
           </button>
           <NavLink

@@ -12,11 +12,14 @@ const AddAsset = () => {
   const [assetType, setAssetType] = useState("Pump");
   const [assetId, setAssetId] = useState("P-25");
   const [locationName, setLocationName] = useState("Pump Station 1");
-  const [assetDescription, setAssetDescription] = useState("Centrifugal pump for water supply");
+  const [assetDescription, setAssetDescription] = useState(
+    "Centrifugal pump for water supply"
+  );
   const [purchaseDate, setPurchaseDate] = useState("01/01/2020");
   const [manufacturer, setManufacturer] = useState("Grundfos");
   const [serialNumber, setSerialNumber] = useState("PUMP005");
-  const [warrantyExpirationDate, setWarrantyExpirationDate] = useState("01/01/2025");
+  const [warrantyExpirationDate, setWarrantyExpirationDate] =
+    useState("01/01/2025");
   const [maintenanceInterval, setMaintenanceInterval] = useState("Monthly");
   const [lastMaintenanceDate, setLastMaintenanceDate] = useState("01/05/2022");
   const [nextMaintenanceDate, setNextMaintenanceDate] = useState("02/05/2022");
@@ -24,7 +27,7 @@ const AddAsset = () => {
 
   const handleStatusValue = () => {
     setStatus(!status);
-  }
+  };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -44,7 +47,7 @@ const AddAsset = () => {
           maintenanceInterval: maintenanceInterval,
           lastMaintenanceDate: lastMaintenanceDate,
           nextMaintenanceDate: nextMaintenanceDate,
-          status: status ? "Active" : "Inactive"
+          status: status ? "Active" : "Inactive",
         });
         alert("Asset created!!");
         navigate("/assets");
@@ -149,9 +152,7 @@ const AddAsset = () => {
                 id="status"
                 name="status"
                 checked={status}
-                onChange={
-                  handleStatusValue
-                }
+                onChange={handleStatusValue}
               />
               Active
             </label>
